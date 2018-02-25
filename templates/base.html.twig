@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,900,900i" rel="stylesheet">
+            <link href="{{ asset('build/app.css') }}" rel="stylesheet"/>
+        {% endblock %}
+    </head>
+    <body class="ctl--{{ controller_name }}">
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/app.js') }}"></script>{% endblock %}
+    </body>
+</html>

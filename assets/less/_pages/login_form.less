@@ -1,0 +1,62 @@
+.login--form {
+    .unitize-padding(0, 45, 20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+
+}
+
+.input--wrapper {
+    .unitize-margin(0, 0, 10);
+    position: relative;
+
+    &:last-of-type {
+        .unitize-margin(0, 0, 20);
+    }
+
+    > input {
+        .unitize-padding(15, 15, 10);
+        text-align: center;
+        outline: 0;
+
+        &:valid,
+        &:invalid,
+        &:focus {
+            outline: 0 none;
+            box-shadow: unset;
+        }
+    }
+
+    > label {
+        .transition(~"font-size @{transitionDuration} @{transitionFunction}, color @{transitionDuration} @{transitionFunction}, padding @{transitionDuration} @{transitionFunction}");
+        .unitize-padding(15, 2);
+        color: @brand-primary;
+        display: inline-block;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    > input:focus + label,
+    > input:valid + label {
+        .unitize(font-size, 11);
+        color: @brand-secondary;
+        padding: 0;
+    }
+}
+
+.form--actions {
+    .unitize-padding(10, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login--button {
+    .unitize(margin-bottom, 20);
+    text-transform: uppercase;
+}

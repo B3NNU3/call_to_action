@@ -1,0 +1,103 @@
+body {
+    background: @white;
+    color: @brand-primary;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: @baseFontSize;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, p, ul, ol, li, p, a, img, input, textarea, button {
+    .unitize(font-size, 14);
+    .unitize(line-height, 18);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: @fontBaseWeight;
+}
+
+button, .btn {
+    .border-radius(7px);
+    .transition(background @transitionDuration @transitionFunction);
+    .unitize(font-size, 20);
+    .unitize(line-height, 24);
+    .unitize-padding(10, 25);
+    background: @brand-secondary;
+    border: 0 none;
+    color: @white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: @fontBoldWeight;
+    font-style: italic;
+
+    &:focus, &:active, &:hover {
+        background: @brand-primary;
+    }
+}
+
+a {
+    .transition(color @transitionDuration @transitionFunction);
+    color: @brand-primary;
+    text-decoration: none;
+
+    &:hover, &focus {
+        color: darken(@brand-primary, 25%);
+    }
+}
+
+.badge {
+    .transition(background @transitionDuration @transitionFunction);
+    .border-radius(100px);
+    .unitize(font-size, 20);
+    .unitize(line-height, 24);
+    .unitize(height, 28);
+    .unitize(width, 28);
+    .unitize-padding(2, 2, 0);
+    .unitize-margin(10, 0, 0);
+    background: @brand-secondary;
+    color: @white;
+    display: inline-block;
+    font-weight: @fontBoldWeight;
+    text-align: center;
+
+    &:hover, &focus {
+        background: @brand-primary;
+    }
+}
+
+.obj--container {
+    .unitize(width, 320);
+    .unitize(height, 200);
+    .unitize-margin(0, 0, 10);
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    .content {
+        position: relative;
+        z-index: 600;
+    }
+}
+
+.obj {
+    .unitize(width, 400);
+    .unitize(height, 400);
+    z-index: 500;
+
+    &.background {
+        position: absolute;
+
+        &.top {
+            .unitize(top, -380);
+            .unitize(left, -410);
+        }
+    }
+
+    &.rectangle {
+        .transform(skew(56deg, 0deg) rotate(72deg) scale(1.5));
+        display: block;
+        background: @brand-secondary;
+
+    }
+}
